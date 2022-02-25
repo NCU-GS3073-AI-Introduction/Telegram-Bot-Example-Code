@@ -56,7 +56,9 @@ https://t.me/Python0224testbot
                 # bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
             else:
                 # send the welcoming message
-                bot.sendMessage(chat_id=chat_id, text=text, reply_markup = json.loads('{"inline_keyboard":[[{"text":"Google", "url": "https://google.com"}, {"text":"NCU", "url": "https://www.ncu.edu.tw"}]]}'))
+                inline_keyboard = '{"inline_keyboard":[[{"text":"Google", "url": "https://google.com"}, \
+                                    {"text":"NCU", "url": "https://www.ncu.edu.tw"}]]}'
+                bot.sendMessage(chat_id=chat_id, text=text, reply_markup = inline_keyboard)
                 # bot.sendMessage(chat_id=chat_id, text=text, reply_markup = json.loads('{"inline_keyboard":[[{"text":"Google", "callback_data": "https://google.com"}, {"text":"NCU", "callback_data": "https://www.ncu.edu.tw"}]]}'))
                 # bot.sendMessage(chat_id=chat_id, text=text, reply_to_message_id=msg_id)
 

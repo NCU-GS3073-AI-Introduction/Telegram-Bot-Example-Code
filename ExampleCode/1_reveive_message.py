@@ -26,12 +26,13 @@ def webhook_handler():
     """Set route /hook with POST method will trigger this method."""
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
+        print(update)
         chat_id = update.message.chat.id
+        user_firstname = update.message.chat.first_name
+        user_lastname = update.message.chat.last_name
+        msg = update.message.text
         msg_id = update.message.message_id
-        # Telegram understands UTF-8, so encode text for unicode compatibility
-        # text = update.message.text.encode('utf-8').decode()
-        text = update.message.text
-        print(text)
+        print(msg)
     return 'ok'
 
 if __name__ == "__main__":

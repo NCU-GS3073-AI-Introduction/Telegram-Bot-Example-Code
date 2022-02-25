@@ -56,7 +56,8 @@ https://t.me/Python0224testbot
                 # bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
             else:
                 # send the welcoming message
-                keyboard = [[{'text':'1', "callback_data": "1"},{'text':'2', "callback_data": "2"}],[{'text':'3', "callback_data": "3"},{'text':'4', "callback_data": "4"}]]
+                keyboard = [[{'text':'1', "callback_data": "1"},{'text':'2', "callback_data": "2"}]
+                ,[{'text':'3', "callback_data": "3"},{'text':'4', "callback_data": "4"}]]
                 ReplyKeyboardMakeup = {
                     'keyboard': keyboard,
                     'resize_keyboard': True,

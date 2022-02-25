@@ -34,7 +34,6 @@ def webhook_handler():
         else:
             chat_id = update.message.chat.id
             msg_id = update.message.message_id
-
             # Telegram understands UTF-8, so encode text for unicode compatibility
             # text = update.message.text.encode('utf-8').decode()
             text = update.message.text
@@ -57,7 +56,9 @@ https://t.me/Python0224testbot
             else:
                 # send the welcoming message
                 # bot.sendMessage(chat_id=chat_id, text=text, reply_markup = json.loads('{"inline_keyboard":[[{"text":"Google", "url": "https://google.com"}, {"text":"NCU", "url": "https://www.ncu.edu.tw"}]]}'))
-                bot.sendMessage(chat_id=chat_id, text=text, reply_markup = json.loads('{"inline_keyboard":[[{"text":"Google", "callback_data": "https://google.com"}, {"text":"NCU", "callback_data": "https://www.ncu.edu.tw"}]]}'))
+                inline_keyboard = '{"inline_keyboard":[[{"text":"Google", "callback_data": "https://google.com"}, \
+                    {"text":"NCU", "callback_data": "https://www.ncu.edu.tw"}]]}'
+                bot.sendMessage(chat_id=chat_id, text=text, reply_markup = inline_keyboard)
                 # bot.sendMessage(chat_id=chat_id, text=text, reply_to_message_id=msg_id)
 
             # Update dispatcher process that handler to process this message
